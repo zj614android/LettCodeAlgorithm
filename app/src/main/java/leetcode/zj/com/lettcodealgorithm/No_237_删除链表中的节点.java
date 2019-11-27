@@ -23,7 +23,9 @@ public class No_237_删除链表中的节点 {
 
         print();
 
-        n1.next = n3;
+        //输入2  删除2
+        n2.value = n2.next.value;
+        n2.next = n2.next.next;
 
         print();
 
@@ -31,9 +33,29 @@ public class No_237_删除链表中的节点 {
 
     private static void print() {
         System.out.println("=======================");
-        System.out.println("n1.next.value ="+n1.next.value);
-        System.out.println("n2.next.value ="+n2.next.value);
-        System.out.println("n3.next.value ="+n3.next.value);
+        System.out.println("n1  ="+n1);
+        System.out.println("n2  ="+n2);
+        System.out.println("n3  ="+n3);
+        System.out.println("n4  ="+n4);
+    }
+
+
+    /**
+     * 对猜，没难度
+     * @param guess
+     * @param answer
+     * @return
+     */
+    public int game(int[] guess, int[] answer) {
+
+        int okTimes = 0;
+        for (int i = 0; i < guess.length; i++) {
+            if (guess[i] == answer[i]){
+                okTimes++;
+            }
+        }
+        return okTimes;
+
     }
 
 }
