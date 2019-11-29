@@ -27,10 +27,33 @@ import android.text.TextUtils;
 
 public class No_771_宝石与石头 {
 
+
     public static void main(String[] args) {
+        String source = "aAAbbbb";
+        String target = "aA";
+        System.out.println(numJewelsInStones(target,source));
+    }
 
 
+    public static int numJewelsInStones(String J, String S) {
 
+        if (null != J && J.length() > 0 && null != S && S.length() > 0) {
+            char[] charsFromTarget = J.toCharArray();
+            char[] charsFromSource = S.toCharArray();
+
+            int count = 0;
+
+            for (int i = 0; i < charsFromTarget.length; i++) {
+                for (int j = 0; j < charsFromSource.length; j++) {
+                    if (charsFromSource[j] == charsFromTarget[i]) {
+                        count++;
+                    }
+                }
+            }
+            return count;
+        }
+
+        return 0;
     }
 
 }
